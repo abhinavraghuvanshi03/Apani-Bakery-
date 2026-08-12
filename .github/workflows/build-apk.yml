@@ -1,6 +1,9 @@
 name: Build Apni Bakery APK
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
