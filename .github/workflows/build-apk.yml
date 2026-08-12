@@ -1,11 +1,4 @@
-- name: Extract app project
-        run: |
-          unzip -o apni_bakery_flutter_app.zip -d app
-          ls -la app
-
-      - name: Replace main.dart with fixed version
-        run: cp main.dart app/lib/main.dart
-        name: Build Apni Bakery APK
+name: Build Apni Bakery APK
 
 on:
   push:
@@ -25,9 +18,6 @@ jobs:
         run: |
           unzip -o apni_bakery_flutter_app.zip -d app
           ls -la app
-
-      - name: Replace main.dart with fixed version
-        run: cp main.dart app/lib/main.dart
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
