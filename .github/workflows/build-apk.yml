@@ -17,15 +17,18 @@ jobs:
       - name: Extract app project
         run: |
           unzip -o apni_bakery_flutter_app.zip -d app
-          cd app
-          flutter create --platforms=android .
-          ls -la
+          ls -la app
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.32.8'
           channel: stable
+
+      - name: Create Android project
+        working-directory: app
+        run: |
+          flutter create --platforms=android .
 
       - name: Get dependencies
         working-directory: app
