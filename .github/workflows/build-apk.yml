@@ -18,6 +18,7 @@ jobs:
         run: |
           unzip -o apni_bakery_flutter_app.zip -d app
           cd app
+          flutter create --platforms=android .
           ls -la
 
       - name: Setup Flutter
